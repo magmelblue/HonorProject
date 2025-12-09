@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Darfe Andres F. Honor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        /* ---------- ROOT COLORS ---------- */
+        
         :root {
             --bg1: #8a3900;
             --bg2: #ffbb00;
@@ -16,7 +15,7 @@
             --accent: #ffe27a;
         }
 
-        /* ---------- DARK MODE COLORS ---------- */
+       
         body.dark {
             --bg1: #111;
             --bg2: #333;
@@ -25,7 +24,7 @@
             --accent: #ffaa00;
         }
 
-        /* ---------- BODY ---------- */
+       
         body {
             margin: 0;
             background: linear-gradient(135deg, var(--bg1), var(--bg2));
@@ -34,7 +33,7 @@
             transition: background 0.5s, color 0.5s;
         }
 
-        /* ---------- NAVBAR ---------- */
+        
         nav {
             display: flex;
             justify-content: space-between;
@@ -60,7 +59,7 @@
             text-shadow: 0 0 8px var(--accent);
         }
 
-        /* ---------- DARK MODE BUTTON ---------- */
+        
         .toggle-btn {
             cursor: pointer;
             padding: 7px 15px;
@@ -124,6 +123,7 @@
             margin: 0 0 10px 0;
             color: var(--accent);
         }
+
         @media (max-width: 700px) {
             .hero-name {
                 font-size: 32px;
@@ -151,12 +151,12 @@
 
     <div class="hero">
         <div class="hero-content">
-            <img src="{% static 'portfolio/ggggg.jpg' %}" alt="Profile Photo">
+            <img src="portfolio/ggggg.jpg" alt="Profile Photo">
             <div class="hero-name">Darfe Andres F. Honor</div>
         </div>
     </div>
-    <div class="container">
 
+    <div class="container">
         <div class="card" id="about">
             <h2>About Me</h2>
             <p>
@@ -171,19 +171,16 @@
             </p>
         </div>
 
-        <!-- SKILLS -->
         <div class="card" id="skills">
             <h2>Skills</h2>
             <p>• Java / Python</p>
             <p>• GitHub</p>
         </div>
 
-        <!-- CONTACT -->
         <div class="card" id="contact">
             <h2>Contact</h2>
             <p>Email: <strong>darfeandreshonor@gmail.com</strong></p>
         </div>
-
     </div>
 
     <script>
