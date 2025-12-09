@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Darfe Andres F. Honor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ---------- ROOT COLORS ---------- */
+        :root {
+            --bg1: #8a3900;
+            --bg2: #ffbb00;
+            --card-bg: rgba(0,0,0,0.25);
+            --text-light: #ffffff;
+            --accent: #ffe27a;
+        }
+
+        /* ---------- DARK MODE COLORS ---------- */
+        body.dark {
+            --bg1: #111;
+            --bg2: #333;
+            --card-bg: rgba(255,255,255,0.1);
+            --text-light: #f0f0f0;
+            --accent: #ffaa00;
+        }
+
+        /* ---------- BODY ---------- */
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            font-family: Arial, sans-serif;
+            color: var(--text-light);
+            transition: background 0.5s, color 0.5s;
+        }
+
+        /* ---------- NAVBAR ---------- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text-light);
+            margin-left: 25px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 8px var(--accent);
+        }
+
+        /* ---------- DARK MODE BUTTON ---------- */
+        .toggle-btn {
+            cursor: pointer;
+            padding: 7px 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+        }
+
+        .hero-name {
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        h2 {
+            margin: 0 0 10px 0;
+            color: var(--accent);
+        }
+        @media (max-width: 700px) {
+            .hero-name {
+                font-size: 32px;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <strong>Portfolio</strong>
+        </div>
+        <div class="nav-right">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <span class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</span>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <img src="{% static 'portfolio/ggggg.jpg' %}" alt="Profile Photo">
+            <div class="hero-name">Darfe Andres F. Honor</div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="card" id="about">
+            <h2>About Me</h2>
+            <p>
+                Greetings! I am Darfe Andres F. Honor, I'm 21 years old, and I live in Las Palmas Subdivision, 
+                Cay Pombo, Santa Maria, Bulacan. I am currently studying at STI Sta. Maria and am a 
+                2nd-year BSIT Student. I am quite adept in Java & Python, and also familiar with GitHub, 
+                which I learned from STI Sta. Maria.
+                <br><br>
+                When I am not studying, I entertain myself by reading manhwas, playing games, using social media, 
+                and learning trivial facts about things that interest me. I am interested in learning more from 
+                STI Sta. Maria, while enjoying my life as a student and as a person.
+            </p>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="card" id="skills">
+            <h2>Skills</h2>
+            <p>• Java / Python</p>
+            <p>• GitHub</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="card" id="contact">
+            <h2>Contact</h2>
+            <p>Email: <strong>darfeandreshonor@gmail.com</strong></p>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+        }
+    </script>
+
+</body>
+</html>
